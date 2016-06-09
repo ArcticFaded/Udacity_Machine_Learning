@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11923,7 +11923,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> For the features RM and LSTAT we would expect MDEV to increase. We assume that if there are more Rooms in a house, then the house is large and we expect its MDEV is also be large. LSTAT would also lead to a larger MDEV if we assume that Home Owners with more networth will live in more expensive homes. PTATIO however would lead to a decrease in MDEV, if there are more students to teachers in high amounts, it is a sign that the homes around the schools are more likely smaller in order to accomidate for the large percentage of students.</p>
+<p><strong>Answer: </strong> For the features RM we would expect MDEV to increase. We assume that if there are more Rooms in a house, then the house is large and we expect its MDEV is also be large. PTATIO however would lead to a decrease in MDEV, if there are more students to teachers in high amounts, it is a sign that the homes around the schools are more likely smaller in order to accomidate for the large percentage of students. For LSTAT we would predict that if the difference is to great it implies the neighborhood is relativly poorer and thus MDEV will decrease.</p>
 
 </div>
 </div>
@@ -11957,7 +11957,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;r2_score&#39;</span>
@@ -12021,7 +12021,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate the performance of this model</span>
@@ -12079,7 +12079,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;train_test_split&#39;</span>
@@ -12126,7 +12126,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The test/train splitting allows us to know whether our model is working or not. The benefit of low test/high training is that it allows our model to be accurate versus high test/low training. There are of course tradeoffs, when there is to much training you can experience a fit which is to sensitive to new values and when there is to little training you have a model which will be more inaccurate than accurate.</p>
+<p><strong>Answer: </strong> The test/train splitting allows us to measure the performance of our Model. It also allows us to know whether our dataset is overfitting. That is, when there is to much training you can experience a fit which is to sensitive to new values and when there is to little training you have a model which will be more inaccurate than accurate.</p>
 
 </div>
 </div>
@@ -13242,7 +13242,7 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> GRAPH WITH MAX_DEPTH=6: As more training points were added, the training score lowered in a linear fashion. The testing score, however, increased exponentially before plateauing after about 50 training points. Having more training points does benefit a model, but only to a certain extent as is evident by the plateauing.</p>
+<p><strong>Answer: </strong> GRAPH WITH MAX_DEPTH=6: As more training points were added, the training score lowered in a linear fashion. The testing score, however, increased exponentially before converging to the training set after about 50 training points. Having more training points does not benefit the model, because it doesn't increase its score anymore than the limit of the training score.</p>
 
 </div>
 </div>
@@ -13723,7 +13723,7 @@ nzHGmA7FEp8xxpgO5f8BtHsitQjk6TQAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>The model at depth 1 suffers from high bias, its curve is to general (noted by the skinner shaded region). The model at depth 10 suffers from high variance, its curve is to specific as it tries to fit all the points.</p>
+<p><strong>Answer: </strong>The model at depth 1 suffers from high bias, its curve is to general, that is, the uncertainty is too low which can lead to inaccurate predictions. The model at depth 10 suffers from high variance, its curve's uncertainty is too high as the curve tries to accommodate for each data point leading to the wrong prediction.</p>
 
 </div>
 </div>
@@ -13743,7 +13743,7 @@ nzHGmA7FEp8xxpgO5f8BtHsitQjk6TQAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The depth which is best at generalizing unseen data is the ones between 2-4, when you have high variance your model is to sensitive to unseen data and when you have high bias your model will make wrong predictions. Having a balance between variance and bias will give a good model which best generalizes unseen data</p>
+<p><strong>Answer: </strong> The depth which is best at generalizing unseen data is 4, you obtain the highest score in the curve (according to the points) and your balance between uncertainty is good for predicting outcomes of unseen data. That is, it is not too bias nor is it too variant. points 1 and 2 are good for unseen data, but because they are too bias, will not predicte a correct answer. Points 3 and 4 are similar with the only advantage being that 4 acheieves a higher score</p>
 
 </div>
 </div>
@@ -13774,7 +13774,7 @@ nzHGmA7FEp8xxpgO5f8BtHsitQjk6TQAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Grid search is a technique which compares models to see which compares parameters better. You can optimize a learning algorithm in this way by choosing a best model among similar models.</p>
+<p><strong>Answer: </strong> Grid search is a technique which compares models to see which compares parameters better. It accomplishes this by exhaustively selecting new parameters and trying them out on the model. You can optimize a learning algorithm in this way by choosing a best model among similar models.</p>
 
 </div>
 </div>
@@ -13830,7 +13830,7 @@ nzHGmA7FEp8xxpgO5f8BtHsitQjk6TQAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -13848,13 +13848,13 @@ nzHGmA7FEp8xxpgO5f8BtHsitQjk6TQAAAAASUVORK5CYII=
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)}</span>
     <span class="k">print</span> <span class="n">params</span>
     <span class="c1"># TODO: Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create the grid search object</span>
-    <span class="n">grid</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">regressor</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">regressor</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">scoring_fnc</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">cv_sets</span><span class="p">)</span>
 
     <span class="c1"># Fit the grid search object to the data to compute the optimal model</span>
     <span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -13891,7 +13891,7 @@ nzHGmA7FEp8xxpgO5f8BtHsitQjk6TQAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -13975,7 +13975,7 @@ Parameter &#39;max_depth&#39; is 4 for the optimal model.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
@@ -14014,7 +14014,7 @@ Predicted selling price for Client 3&#39;s home: $931,636.36
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the data explortation section the mean price was 454,342.94 with a standard deviation of 165,171.13, a medium price at 438,900, a lowest price at 105,000 and a max price at 1,024,800. With his in mind I would price client 1's home at around one standard of deviation away from the mean, client 2 at the mean, and client 3 at 2 standards of deviantion away from the mean.</p>
+<p>In the data explortation section the mean price was 454,342.94 with a standard deviation of 165,171.13, a medium price at 438,900, a lowest price at 105,000 and a max price at 1,024,800. With his in mind I would price client 1's home at around one standard of deviation away from the mean, client 2 between 1 or 2 standards of deviation below, and client 3 at 2 standards of deviantion away from the mean.</p>
 <p>With that being said the predicted price for client 1,2, and 3 are 344,400.00, 237,478.72, and 931,636.36 respectively.</p>
 <p>For client 1 I would say the price that the model undervalues their home because they have a good RM, high LSTAT, and ok PTRATIO.</p>
 <p>For client 2 their home is also undervalued but not as much as Client 1 (undervalued for the same reason)</p>
@@ -14035,7 +14035,7 @@ Predicted selling price for Client 3&#39;s home: $931,636.36
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">vs</span><span class="o">.</span><span class="n">PredictTrials</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">fit_model</span><span class="p">,</span> <span class="n">client_data</span><span class="p">)</span>
@@ -14052,15 +14052,15 @@ Predicted selling price for Client 3&#39;s home: $931,636.36
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>{&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-Trial 1: $332,850.00
+Trial 1: $324,240.00
 {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-Trial 2: $411,417.39
+Trial 2: $302,400.00
 {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
 Trial 3: $346,500.00
 {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-Trial 4: $324,450.00
+Trial 4: $420,622.22
 {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-Trial 5: $413,334.78
+Trial 5: $302,400.00
 {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
 Trial 6: $411,931.58
 {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
@@ -14068,11 +14068,11 @@ Trial 7: $344,750.00
 {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
 Trial 8: $407,232.00
 {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-Trial 9: $306,000.00
+Trial 9: $352,315.38
 {&#39;max_depth&#39;: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
 Trial 10: $316,890.00
 
-Range in prices: $107,334.78
+Range in prices: $118,222.22
 </pre>
 </div>
 </div>
